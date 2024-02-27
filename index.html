@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="INSTRUCTIONS​">
+    <meta name="description" content="">
+    <title>Home</title>
+    <link rel="stylesheet" href="ravoker.css" media="screen">
+<link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="ravoker.js" defer=""></script>
+    <meta name="generator" content="Nicepage 6.4.0, nicepage.com">
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": ""
+}</script>
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+  <script>
+    function initMap() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const userLocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            showMap(userLocation);
+          },
+          (error) => {
+            console.error("Error getting user location:", error);
+            // Handle errors, e.g., by defaulting to a predefined location
+          }
+        );
+      } else {
+        console.error("Geolocation is not supported by this browser");
+        // Handle the case where geolocation is not supported
+      }
+    }
+
+    function showMap(userLocation) {
+      const input_val_raste = document.getElementById("name-4e8a").value;
+
+ let destinationLocation = {
+        lat: 30.516096,
+        lng: 76.659295
+      };
+
+      if (input_val_raste === "Examination Building") {
+        destinationLocation = {
+          lat: 30.516096,
+          lng: 76.659295
+        };
+      } else if (input_val_raste === "DE-Morgan") {
+        destinationLocation = {
+         lat: 30.516256,
+	 lng: 76.660317
+        };
+      }else if (input_val_raste === "Curine") {
+        destinationLocation = {
+	lat: 30.517310,
+	lng: 76.658961
+        };
+      }else if (input_val_raste === "Babbage Block") {
+        destinationLocation = {         
+	lat: 30.517408,
+	lng: 76.659990
+        };
+      }else if (input_val_raste === "Clock Tower") {
+        destinationLocation = {         
+	lat: 30.517343,
+	lng: 76.660321
+        };
+      }else if (input_val_raste === "Square Two") {
+        destinationLocation = {       
+	lat: 30.517335,
+	lng: 76.660634
+        };
+      }else if (input_val_raste === "Le Corbusier Block") {
+        destinationLocation = {       
+	lat: 30.517170,
+	lng: 76.660342
+        };
+      }else if (input_val_raste === "Newton Block") {
+        destinationLocation = {
+	lat: 30.516411,
+	lng: 76.659410
+        };
+      }else if (input_val_raste === "Edison Block") {
+        destinationLocation = {
+	lat: 30.516379,
+	lng: 76.660000
+        };
+      }else if (input_val_raste === "Turing block") {
+        destinationLocation = {
+	lat: 30.516421,
+	lng: 76.660780
+        };
+      }else if (input_val_raste === "Fleming Block") {
+        destinationLocation = {
+	lat: 30.515770,
+	lng: 76.660506
+        };
+      }else if (input_val_raste === "Central library") {
+        destinationLocation = {
+	lat: 30.515853,
+	lng: 76.660522
+        };
+      }else if (input_val_raste === "Business School") {
+        destinationLocation = {
+	lat: 30.515640,
+	lng: 76.661177
+        };
+      }else if (input_val_raste === "Square One") {
+        destinationLocation = {
+	lat: 30.515162,
+	lng: 76.659892
+        };
+      }else if (input_val_raste === "School of Culinary Arts") {
+        destinationLocation = {
+	lat: 30.514846,
+	lng: 76.660250
+        };
+      }else if (input_val_raste === "School of Hospitality") {
+        destinationLocation = {
+	lat: 30.514846,
+	lng: 76.660250
+        };
+      }else if (input_val_raste === "Center for Entrepreneurship Education & Development") {
+        destinationLocation = { 
+	lat: 30.515375,
+	lng: 76.659470
+        };
+      }else if (input_val_raste === "School Of Health Sciences") {
+        destinationLocation = {
+	lat: 30.515758,
+	lng: 76.659261
+        };
+      }else if (input_val_raste === "College of Education") {
+        destinationLocation = {
+	lat: 30.515758,
+	lng: 76.659261
+        };
+      }else if (input_val_raste === "D'Art Gallery") {
+        destinationLocation = {
+	lat: 30.515758,
+	lng: 76.659261
+        };
+      }else if (input_val_raste === "Picasso Block") {
+        destinationLocation = {
+	lat: 30.517310,
+	lng: 76.658961
+        };
+      }else if (input_val_raste === "Admission Block") {
+        destinationLocation = {
+	lat: 30.517310,
+	lng: 76.658961
+        };
+      }
+
+
+      const element = document.getElementById("map");
+
+
+      const map = L.map('map').setView(userLocation, 12);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
+
+      L.marker(userLocation).addTo(map).bindPopup('Your Location').openPopup();
+      L.marker(destinationLocation).addTo(map).bindPopup(input_val_raste).openPopup();
+
+      L.Routing.control({
+        waypoints: [
+          L.latLng(userLocation.lat, userLocation.lng),
+          L.latLng(destinationLocation.lat, destinationLocation.lng)
+        ],
+        routeWhileDragging: true
+      }).addTo(map);
+    }
+  </script>
+
+
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en">
+    <section class="u-clearfix u-section-1" id="sec-ebf6">
+      <div class="u-expanded-width u-opacity u-opacity-75 u-shape u-shape-svg u-text-palette-4-dark-1 u-shape-1">
+        <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 80" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-d8f7"></use></svg>
+        <svg class="u-svg-content" viewBox="0 0 160 80" x="0px" y="0px" id="svg-d8f7" style="enable-background:new 0 0 160 80;"><path d="M160,0H0c0,44.2,35.8,80,80,80S160,44.2,160,0z"></path></svg>
+      </div>
+      <div class="infinite u-shape u-shape-svg u-text-white u-shape-2" data-animation-name="pulse" data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
+        <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 140" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-e18f"></use></svg>
+        <svg class="u-svg-content" viewBox="0 0 160 140" x="0px" y="0px" id="svg-e18f" style="enable-background:new 0 0 160 140;"><path d="M38.1,14.8c8.8-0.7,18.1,1.2,28.4,0.3c17-1.5,33.3-8.6,49.7-13c6.9-1.9,14.3-3,21.3-1.2c8.6,2.3,13.5,8.9,16.3,17.1
+	c8,23.1,6.9,40.9,4.4,65.3c-1.4,13.7-5.5,30.3-20,35c-11.4,3.7-23.9-0.3-35.7,1.8c-20.8,3.8-43.5,25-65.2,18.8
+	c-42.8-12.4-48.2-87.2-19.2-115C24.8,17.6,31.3,15.4,38.1,14.8L38.1,14.8z"></path></svg>
+      </div>
+      <img class="u-image u-image-circle u-image-contain u-image-1" src="images/1j_ojFVGOMkX9W_reBe4hGfL3_W..-removebg-preview.png" alt="" data-image-width="304" data-image-height="233">
+      <div class="u-expanded-width u-form u-form-1">
+        <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-0 u-form-vertical u-inner-form" source="email" name="form" style="padding: 50px;">
+          <div class="u-form-group u-form-name">
+            <label for="name-4e8a" class="u-form-control-hidden u-label"></label>
+
+
+            <input id="name-4e8a" list="chitkara_blocks" type="text" placeholder="Enter Your Destination" name="text" class="u-input u-input-rectangle" required="" autofocus="autofocus">
+
+
+<datalist id="chitkara_blocks">
+
+<option value="Admission Block">Admission Block</option>
+
+<option value="Babbage Block">Babbage Block </option>
+<option value="Business School">Business School</option>
+
+<option value="Center for Entrepreneurship Education & Development">Center for Entrepreneurship Education & Development</option>
+<option value="Central library">Central library</option>
+<option value="Clock Tower">Clock Tower</option>
+<option value="College of Education">College of Education</option>
+<option value="Curine">Curine</option>
+
+<option value="DE-Morgan">DE-Morgan</option>
+<option value="D'Art Gallery">D'Art Gallery</option>
+
+<option value="Edison Block">Edison Block</option>
+
+<option value="Fleming Block">Fleming Block</option>
+
+<option value="Le Corbusier Block">Le Corbusier Block</option>
+
+<option value="Newton Block">Newton Block</option>
+
+<option value="Picasso Block">Picasso Block</option>
+
+<option value="School of Culinary Arts">School of Culinary Arts</option>
+<option value="School Of Health Sciences">School Of Health Sciences</option>
+<option value="School of Hospitality">School of Hospitality</option>
+
+<option value="Square One">Square One</option>
+<option value="Square Two">Square Two</option>
+
+<option value="Turing block">Turing block</option>
+
+</datalist>
+
+
+
+
+
+
+
+          </div>
+          <div class="u-align-center u-form-group u-form-submit">
+           
+            
+          </div>
+          
+          <input type="hidden" value="" name="recaptchaResponse">
+          <input type="hidden" name="formServices" value="59edadf9-abcb-24f3-0619-0cbbcaa7e92c">
+        </form>
+      </div>
+
+
+      <a onclick="initMap()" class="u-border-2 u-border-hover-palette-4-dark-1 u-border-palette-4-dark-2 u-btn u-btn-round u-button-style u-hover-palette-4-dark-1 u-palette-4-light-1 u-radius u-text-body-color u-text-hover-white u-btn-2">SUBMIT</a>
+
+
+    </section>
+    <section class="u-clearfix u-image u-parallax u-typography-custom-page-typography-12--Map u-section-2" id="sec-2abf" data-image-width="2000" data-image-height="1333">
+      <div id="map" class="u-expanded-width u-grey-light-2 u-map u-map-1">
+        <div class="embed-responsive" >
+          <iframe class="embed-responsive-item" src="https://maps.google.com/maps?output=embed&amp;q=Chitkara%20University%2Crajpura&amp;t=m" data-map="JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWFkZHJlc3MlMjIlMkMlMjJhZGRyZXNzJTIyJTNBJTIyQ2hpdGthcmElMjBVbml2ZXJzaXR5JTJDcmFqcHVyYSUyMiUyQyUyMnpvb20lMjIlM0FudWxsJTJDJTIydHlwZUlkJTIyJTNBJTIycm9hZCUyMiUyQyUyMmxhbmclMjIlM0FudWxsJTJDJTIyYXBpS2V5JTIyJTNBbnVsbCUyQyUyMm1hcmtlcnMlMjIlM0ElNUIlNUQlMkMlMjJlbWJlZCUyMiUzQSUyMmh0dHBzJTNBJTJGJTJGd3d3Lmdvb2dsZS5jb20lMkZtYXBzJTJGZW1iZWQlM0ZwYiUzRCExbTE4ITFtMTIhMW0zITFkOTQ4LjA5MDU5OTUyNTgzNjMhMmQ3Ni42NTg0MTA1Mzk4NDEwOSEzZDMwLjUwOTAzMzI3OTEwOTU1ITJtMyExZjAhMmYzOS4xMjUzODUxMjQ3NDEyNSEzZjAhM20yITFpMTAyNCEyaTc2OCE0ZjM1ITNtMyExbTIhMXMweDM5MGZjMzIzNDRhNmUyZDclMjUzQTB4ODFiMzQ2ZGVlOTE3OTljYSEyc0NoaXRrYXJhJTI1MjBVbml2ZXJzaXR5ITVlMSEzbTIhMXNlbiEyc2luITR2MTcwNzEzMjYwMTc5NCE1bTIhMXNlbiEyc2luJTIyJTdE"></iframe>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-section-3" id="sec-b6db">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-sheet-1">
+        <h2 class="u-text u-text-default u-text-grey-90 u-text-1">INSTRUCTIONS </h2>
+        <div class="u-accordion u-collapsed-by-default u-expanded-width-xs u-spacing-10 u-accordion-1">
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-palette-4-dark-1 u-button-style u-hover-palette-4-dark-1 u-palette-4-light-1 u-radius-14 u-accordion-link-1" id="link-accordion-0781" aria-controls="accordion-0781" aria-selected="false">
+              <span class="u-accordion-link-text">How To Use </span><span class="u-accordion-link-icon u-icon u-icon-rectangle u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 42 42" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-f4c1"></use></svg><svg class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" id="svg-f4c1" style="enable-background:new 0 0 42 42;"><polygon points="42,20 22,20 22,0 20,0 20,20 0,20 0,22 20,22 20,42 22,42 22,22 42,22 "></polygon></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-opacity u-opacity-75 u-palette-4-light-2 u-shape-rectangle u-accordion-pane-1" id="accordion-0781" aria-labelledby="link-accordion-0781">
+              <div class="u-container-layout u-container-layout-1">
+                <p class="u-text u-text-2">Raस्ते is a multipurpose navigation application. For proper use read following steps:</p>
+                <ul class="u-custom-list u-text u-text-3">
+                  <li>
+                    <div class="u-list-icon">
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                    </div>No login needed.
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                    </div>Enter your destination on the text box and click on "Submit" button. 
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                    </div>Navigational map should appear according your input.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-palette-4-dark-1 u-button-style u-hover-palette-4-dark-1 u-palette-4-light-1 u-radius-14 u-accordion-link-2" id="link-accordion-4c47" aria-controls="accordion-4c47" aria-selected="false">
+              <span class="u-accordion-link-text">Can't Find Destination </span><span class="u-accordion-link-icon u-icon u-icon-rectangle u-text-black u-icon-2"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 42 42" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-f2c3"></use></svg><svg class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" id="svg-f2c3" style="enable-background:new 0 0 42 42;"><polygon points="42,20 22,20 22,0 20,0 20,20 0,20 0,22 20,22 20,42 22,42 22,22 42,22 "></polygon></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-opacity u-opacity-75 u-palette-4-light-2 u-shape-rectangle u-accordion-pane-2" id="accordion-4c47" aria-labelledby="link-accordion-4c47">
+              <div class="u-container-layout u-container-layout-2">
+                <ul class="u-custom-list u-text u-text-4">
+                  <li>
+                    <div class="u-list-icon">
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                    </div>Raस्ते depends on data provided by organization.<br>
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                    </div>If you can't find your destination check pop up suggestions. 
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                    </div>Still can't find your destination feel free to contact us.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="u-accordion-item">
+            <a class="u-accordion-link u-active-palette-4-dark-1 u-button-style u-hover-palette-4-dark-1 u-palette-4-light-1 u-radius-14 u-accordion-link-3" id="link-accordion-a910" aria-controls="accordion-a910" aria-selected="false">
+              <span class="u-accordion-link-text">Showing Wrong ​Location</span><span class="u-accordion-link-icon u-icon u-icon-rectangle u-text-black u-icon-3"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 42 42" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9669"></use></svg><svg class="u-svg-content" viewBox="0 0 42 42" x="0px" y="0px" id="svg-9669" style="enable-background:new 0 0 42 42;"><polygon points="42,20 22,20 22,0 20,0 20,20 0,20 0,22 20,22 20,42 22,42 22,22 42,22 "></polygon></svg></span>
+            </a>
+            <div class="u-accordion-pane u-container-style u-opacity u-opacity-75 u-palette-4-light-2 u-shape-rectangle u-accordion-pane-3" id="accordion-a910" aria-labelledby="link-accordion-a910">
+              <div class="u-container-layout u-container-layout-3">
+                <ul class="u-custom-list u-text u-text-5">
+                  <li>
+                    <div class="u-list-icon">
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                    </div>We are extremely sorry for inconvenience. 
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                    </div>Please report this issue to our customer care . 
+                  </li>
+                  <li>
+                    <div class="u-list-icon">
+                      <div xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content">–</div>
+                    </div>Our team will fix this issue as soon as possible.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    <footer class="u-align-center u-clearfix u-footer u-gradient u-footer" id="sec-1e4c"><div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <img class="u-absolute-hcenter-xs u-expanded-height u-hidden-xs u-image u-image-contain u-image-default u-image-1" src="images/1j_ojFVGOMkX9W_reBe4hGfL3_W..-removebg-preview.png" alt="" data-image-width="304" data-image-height="233">
+        <p class="u-small-text u-text u-text-palette-2-dark-3 u-text-variant u-text-1"> Copyright © 2024 Raस्ते. All rights reserved.</p>
+      </div></footer>
+
+  
+
+
+</body></html>
