@@ -26,7 +26,18 @@
 
 
 <!-- ----------------------------------------------------------------------------------------------------------------------------------- -->
+<script>
+function innermap(){
+  
+  
+  document.getElementById("internal_map").src="image.png";
 
+
+}
+
+
+
+</script>
 
 
 
@@ -59,53 +70,60 @@
     function showMap(userLocation) {
       const input_val_raste = document.getElementById("name-4e8a").value;
 
- let destinationLocation = {
-        lat: 30.516096,
-        lng: 76.659295
-      };
+      let destinationLocation = {
+    lat: 30.516096,
+    lng: 76.659295
+};
 
-      if (2310987001<=input_val_raste <=2310987035) {
-        destinationLocation = {
-         lat: 30.516256,
-	       lng: 76.660317
-        };
-        document.getElementById("subject").innerHTML="Subject: ADI";
-        document.getElementById("time").innerHTML="Timing: 9:00 Am";
-        document.getElementById("block").innerHTML="Block: De-Morgan";
-        document.getElementById("floor").innerHTML="Floor: 2";
-        document.getElementById("room").innerHTML="Room: LH5";
-
-      }else if (2310987036<=input_val_raste <=2310987070) {
-        destinationLocation = {
-         lat: 30.516256,
-	       lng: 76.660317
-        };
-        document.getElementById("subject").innerHTML="Subject: ADI";
-        document.getElementById("time").innerHTML="Timing: 9:00 Am";
-        document.getElementById("block").innerHTML="Block: De-Morgan";
-        document.getElementById("floor").innerHTML="Floor: 2";
-        document.getElementById("room").innerHTML="Room: LH6";
-      }else if (2310987071<=input_val_raste <=2310987105) {
-        destinationLocation = {
-         lat: 30.516256,
-	       lng: 76.660317
-        };
-        document.getElementById("subject").innerHTML="Subject: ADI";
-        document.getElementById("time").innerHTML="Timing: 9:00 Am";
-        document.getElementById("block").innerHTML="Block: De-Morgan";
-        document.getElementById("floor").innerHTML="Floor: 1";
-        document.getElementById("room").innerHTML="Room: LH2";
-      }else if (2310987106<=input_val_raste <=2310987140) {
-        destinationLocation = {
-         lat: 30.516256,
-	       lng: 76.660317
-        };
-        document.getElementById("subject").innerHTML="Subject: ADI";
-        document.getElementById("time").innerHTML="Timing: 9:00 Am";
-        document.getElementById("block").innerHTML="Block: De-Morgan";
-        document.getElementById("floor").innerHTML="Floor: 1";
-        document.getElementById("room").innerHTML="Room: LH3";
+if (input_val_raste >= 2310987001 && input_val_raste <= 2310987035) {
+    destinationLocation = {
+        lat: 30.516256,
+        lng: 76.660317
+    };
+    document.getElementById("subject").innerHTML = "Subject: ADI";
+    document.getElementById("time").innerHTML = "Timing: 9:00 Am";
+    document.getElementById("block").innerHTML = "Block: De-Morgan";
+    document.getElementById("floor").innerHTML = "Floor: 2";
+    document.getElementById("room").innerHTML = "Room: LH5";
+} else if (input_val_raste >= 2310987036 && input_val_raste <= 2310987070) {
+    destinationLocation = {
+        lat: 30.516256,
+        lng: 76.660317
+    };
+    document.getElementById("subject").innerHTML = "Subject: ADI";
+    document.getElementById("time").innerHTML = "Timing: 9:00 Am";
+    document.getElementById("block").innerHTML = "Block: De-Morgan";
+    document.getElementById("floor").innerHTML = "Floor: 2";
+    document.getElementById("room").innerHTML = "Room: LH6";
+} else if (input_val_raste >= 2310987071 && input_val_raste <= 2310987105) {
+    destinationLocation = {
+        lat: 30.516256,
+        lng: 76.660317
+    };
+    document.getElementById("subject").innerHTML = "Subject: ADI";
+    document.getElementById("time").innerHTML = "Timing: 9:00 Am";
+    document.getElementById("block").innerHTML = "Block: De-Morgan";
+    document.getElementById("floor").innerHTML = "Floor: 1";
+    document.getElementById("room").innerHTML = "Room: LH2";
+} else if (input_val_raste >= 2310987106 && input_val_raste <= 2310987140) {
+    destinationLocation = {
+        lat: 30.516256,
+        lng: 76.660317
+    };
+    document.getElementById("subject").innerHTML = "Subject: ADI";
+    document.getElementById("time").innerHTML = "Timing: 9:00 Am";
+    document.getElementById("block").innerHTML = "Block: De-Morgan";
+    document.getElementById("floor").innerHTML = "Floor: 1";
+    document.getElementById("room").innerHTML = "Room: LH3";
+}else {
+       alert("You have no exam today")
+       document.getElementById("subject").innerHTML = "Subject: -";
+    document.getElementById("time").innerHTML = "Timing: -";
+    document.getElementById("block").innerHTML = "Block: -";
+    document.getElementById("floor").innerHTML = "Floor: -";
+    document.getElementById("room").innerHTML = "Room: -";
       }
+
 
 
       const element = document.getElementById("map");
@@ -204,12 +222,12 @@
     </section>
     <section class="skrollable u-clearfix u-image u-parallax u-typography-custom-page-typography-12--Map u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-section-3" id="sec-2abf" data-image-width="1243" data-image-height="983">
       <div id="map" class="u-absolute-hcenter u-expanded u-grey-light-2 u-map">
-        <img src="images/Chitkara-University2.jpg" class="u-absolute-hcenter u-expanded u-grey-light-2 u-map" alt="">
+        <img id="internal_map" src="images/Chitkara-University2.jpg" class="u-absolute-hcenter u-expanded u-grey-light-2 u-map" alt="">
       </div>
     </section>
     <section class="u-align-center u-clearfix u-section-4" id="sec-b6db">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <a href="../index.html" class="u-border-hover-palette-4-dark-1 u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius u-text-body-color u-text-hover-white u-btn-1">Move Outside</a>
+        <a  onclick="innermap()" class="u-border-hover-palette-4-dark-1 u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-dark-1 u-palette-3-light-1 u-radius u-text-body-color u-text-hover-white u-btn-1">Move Outside</a>
         <h2 class="u-text u-text-default u-text-palette-3-light-1 u-text-1">INSTRUCTIONS </h2>
         <div class="u-accordion u-collapsed-by-default u-expanded-width-xs u-spacing-10 u-accordion-1">
           <div class="u-accordion-item">
